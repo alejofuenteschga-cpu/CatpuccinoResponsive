@@ -72,7 +72,7 @@ a {
 /* Encabezado */
 header {
   text-align: center;
-  background: rgb(233, 206, 162);
+  background: rgb(244,228, 202);
   color:rgb(56, 32, 12);
   padding: 40px 20px;
 }
@@ -258,4 +258,5 @@ footer.footer {
     border-radius: 10px;
   }
 }
+
 
