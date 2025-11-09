@@ -1,0 +1,260 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Quitar subrayado de todos los enlaces */
+a {
+  text-decoration: none;
+}
+
+/* 🔝 Barra de navegación */
+.navbar {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 20px;
+  position: sticky;
+  top: 16px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: min(800px, calc(100% - 64px));
+  margin: 16px auto;
+  border-radius: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.logo img {
+  height: 70px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.logo h2 {
+  color: rgb(56, 32, 12);
+}
+
+.logo h2:hover {
+  color: #ffb8ed;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-left: auto; /* push links to the right */
+}
+
+.nav-links li a {
+  color: rgb(56, 32, 12);
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  display: block;
+  padding: 5px 0;
+}
+
+.nav-links li a:hover {
+  color: #ffb8ed;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  background: rgb(233, 206, 162);
+  color:rgb(56, 32, 12);
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  
+}
+
+/* Menú de comida */
+.menu {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.menu section {
+  margin-bottom: 25px;
+}
+
+.menu h2 {
+  border-bottom: 2px solid rgb(56, 32, 12);
+  padding-bottom: 5px;
+  color: rgb(56, 32, 12);
+  font-size: 1.5em;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #ccc;
+  font-size: 1.1em;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.precio {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Pie de página */
+footer {
+  text-align: center;
+  background: #f2f2f2;
+  padding: 20px;
+  font-size: 0.9em;
+  margin-top: 30px;
+}
+
+/* 📱 Responsivo */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px 16px;
+    width: calc(100% - 48px);
+    margin: 12px auto;
+    gap: 12px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .logo h2 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-links li a {
+    font-size: 0.9em;
+    padding: 5px 10px;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .menu {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .menu li {
+    padding: 15px 0;
+  }
+
+  .menu li span:first-child {
+    margin-bottom: 5px;
+  }
+
+  .precio {
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
+
+html, body {
+  background-color: rgb(255, 255, 255);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  min-height: calc(100vh - 180px); /* Ajusta este valor según el tamaño de tu header y footer */
+  padding-bottom: 60px; /* Espacio para el botón volver */
+}
+
+.button-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+}
+
+.back-button {
+  background-color: rgb(244,228, 202);
+  color: rgb(56, 32, 12);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgb(56, 32, 12);
+  color: rgb(244,228, 202);
+}
+
+footer.footer {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+}
+
+/* Ocultar el botón volver en pantallas muy pequeñas para no entorpecer la lectura */
+@media (max-width: 480px) {
+  .button-container {
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .navbar {
+    width: calc(100% - 40px);
+    margin: 10px auto;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background:rgb(244,228, 202);
+}
+
+/* Asegurar que la página pueda hacer scroll y no se corte en dispositivos móviles */
+html, body {
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 🔝 Barra de navegación */
+.navbar {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 20px; /* espacio entre logo y enlaces */
+  position: sticky;
+  top: 16px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: min(800px, calc(100% - 64px));
+  margin: 16px auto;
+  border-radius: 12px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 70px; /* igual que en index */
+  border-radius: 50%;
+}
+
+.logo h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: rgb(56, 32, 12);
+  margin: 0;
+}
+
+.logo h2:hover {
+  color: #ffb8ed;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px; /* un poco menos para mejor ajuste */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  margin-left: auto; /* empuja los enlaces a la derecha, separándolos del logo */
+}
+
+.nav-links li a {
+  color: rgb(56, 32, 12);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  padding: 5px 0;
+}
+
+.nav-links li a:hover {
+  color: #ffb8ed;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px 16px;
+    gap: 12px;
+    width: calc(100% - 48px);
+    margin: 12px auto;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .logo h2 {
+    font-size: 1.2em;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links li a {
+    font-size: 0.9em;
+  }
+}
+
+.quienes-somos {
+  background-color: #fff;
+  max-width: 800px;
+  /* Use min() so the card never becomes wider than 800px and always keeps side gaps */
+  width: min(800px, calc(100% - 64px));
+  margin: 50px auto;
+  padding: 40px 32px; /* más espacio lateral por defecto */
+  box-sizing: border-box; /* ensure padding counted inside width */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1; /* asegurar que esté encima de overlays ligeros */
+}
+
+.quienes-somos h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+  color:rgb(56, 32, 12); /* tono café */
+}
+
+.quienes-somos p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+}
+
+.wrap-slogan p{
+  text-align: center;
+}
+
+/* Ajustes para pantallas pequeñas: hacer la tarjeta más 'flotante' y con más margen lateral */
+@media (max-width: 992px) {
+  .quienes-somos {
+    width: calc(100% - 64px);
+    margin: 28px auto;
+    padding: 28px 24px; /* mantener buen espaciado en tablets */
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quienes-somos {
+    width: calc(100% - 48px);
+    margin: 18px auto;
+    padding: 22px 20px; /* más padding lateral para móvil */
+    border-radius: 12px;
+  }
+}
+
+/* Extra safeguard for very small screens: keep at least 16px gap each side */
+@media (max-width: 420px) {
+  .navbar {
+    width: calc(100% - 40px);
+    margin: 10px auto;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+
+  .quienes-somos {
+    width: calc(100% - 40px);
+    margin: 12px auto;
+    padding: 18px 16px; /* lectura cómoda en móviles pequeños */
+    border-radius: 10px;
+  }
+}
