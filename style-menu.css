@@ -200,7 +200,7 @@ footer {
 }
 
 html, body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(244,228, 202);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -258,3 +258,4 @@ footer.footer {
     border-radius: 10px;
   }
 }
+
